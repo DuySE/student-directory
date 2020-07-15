@@ -17,7 +17,6 @@ $.ajax({
     url: 'https://randomuser.me/api/?results=12',
     dataType: 'json',
     success: function (data) {
-        console.log(data.results);
         $.each(data.results, (index, user) => {
             data.results[index].id = index;
             $card = $("<div>", {
@@ -33,7 +32,6 @@ $.ajax({
             });
             $card.on("click", () => {
                 let date = new Date(user.dob.date);
-                console.log(user);
                 $(document.body).append(
                     $("<div>", { class: "modal-container" }).append(
                         $("<div>", { class: "modal" }).append([
