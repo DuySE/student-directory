@@ -18,7 +18,6 @@ $.ajax({
     dataType: 'json',
     success: function (data) {
         $.each(data.results, (index, user) => {
-            data.results[index].id = index;
             $card = $("<div>", {
                 class: "card"
             });
